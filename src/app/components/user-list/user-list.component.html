@@ -1,0 +1,13 @@
+<h3>User Lists:</h3>
+<div class="container">
+  <ul *ngFor="let user of userArray">
+    <li style="list-style-type:none">
+      {{ user.username }}
+      <button routerlink="/user-details" (click)="onClick(user)">
+        Show User Details
+      </button>
+    </li>
+  </ul>
+</div>
+<app-user-details *ngIf = 'username' [username]="username" [id]="id">
+</app-user-details>
